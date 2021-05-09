@@ -31,3 +31,13 @@ I then wrote a function for "generatePassword" that includes the following:
 -Then returned the pwOptions varable which will display the random password in the field for the user to see. 
 
 -The event listener was provided in the initial assignment code. 
+
+## Link: 
+
+https://codyconck.github.io/Random-Password-Generator/
+
+## ScreenShot:
+![Screenshot](Assets/03-javascript-homework-demo.png)
+## Built With:
+JavaScript
+
