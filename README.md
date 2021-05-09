@@ -1,48 +1,33 @@
 # 03 JavaScript: Password Generator
 
-Create an application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+Please click "Generate Password" to utilize the random password generator. You will be asked to set a length for your password and confirm which types of characters your password will include. Once these characters are confirmed, you will receive your random password set to the length you requested.
 
-If you are unfamiliar with special characters, take a look at [some examples](https://www.owasp.org/index.php/Password_special_characters).
+For this assignment we were provided with some starter code that included the function for "writePassword" and for the "generateBtn".
 
-## User Story
+I then wrote a function for "generatePassword" that includes the following:
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+-A variable that prompts the user to set the password length. The user response is then converted from a string to a numeric value using the parseInt method and stored in the var "lengthOk".
 
-## Acceptance Criteria
+-Used an "if" statement to verify that the password legnth was between 8 and 128 characters long per the assignment instructions. If not, the user will be prompted to enter a valid password length.
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+-Used another "if" statement and Number.isNaN method with the "legthOk" value as the object to verify that the value returned for "lengthOk" is a number and not another random character.
 
-The following image demonstrates the application functionality:
+-I then defined the variables for each valid character that can be used for the password and stored them as arrays. 
 
-![password generator demo](./Assets/03-javascript-homework-demo.png)
+-I created a variable for "charSet" that would be used to store the users response for characters they wanted to include. 
 
-## Review
+-User will be prompted to confirm which characters they would like to include in the password. 
 
-You are required to submit the following for review:
+-Used "if" statements to confirm which characters the user would want, and "for" loops to iterate through the character arrays when confirmed by the user. Used the push method to take the confirmed characters and store them in charSet array.
 
-* The URL of the deployed application.
+-Used an "if" statement to alert the user if they did not choose at lease one character type for their password. 
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+-I created a variable, pwOptions, that is left as an empty string to recieve the information being stored in the charSet array. 
 
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+-Used a "for" loop to iterate through potential password characters stored in "lengthOk" variable. Used "Math.floor" to round down to whole numbers and "Math.random" * charSet.length to randomize the characters returned to the charSet array. 
+
+-Used addition assignment operator (+=) to take the charSet array and add it to pwOptions variable and randomized that outcome using the above Math.floor and Math.random methods. 
+
+-Then returned the pwOptions varable which will display the random password in the field for the user to see. 
+
+-The event listener was provided in the initial assignment code. 
